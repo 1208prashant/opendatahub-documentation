@@ -6,6 +6,15 @@
 [role='_abstract']
 When you have enabled the *NVIDIA NIM model serving platform*, you can start to deploy NVIDIA-optimized models on the platform.
 
+ifdef::self-managed[]
+[IMPORTANT]
+====
+The NVIDIA NIM model serving platform is not supported in disconnected (air-gapped) {productname-short} environments.
+Deploying NIM models requires network access to NVIDIA GPU Cloud (NGC) services, including the `nvcr.io` container registry and the `authn.nvidia.com` authentication endpoint, to pull model images and validate your API key.
+To serve models in a disconnected environment, use the single-model serving platform with a supported runtime such as vLLM and pre-downloaded models from the {productname-short} model catalog.
+====
+endif::[]
+
 .Prerequisites
 * You have logged in to {productname-long}.
 * You have enabled the *NVIDIA NIM model serving platform*.

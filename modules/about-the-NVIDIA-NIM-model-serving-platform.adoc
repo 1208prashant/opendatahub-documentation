@@ -9,6 +9,15 @@ You can deploy models using NVIDIA NIM inference services on the *NVIDIA NIM mod
 
 NVIDIA NIM, part of NVIDIA AI Enterprise, is a set of microservices designed for secure, reliable deployment of high performance AI model inferencing across clouds, data centers and workstations.
 
+ifdef::self-managed[]
+[IMPORTANT]
+====
+The NVIDIA NIM model serving platform is not supported in disconnected (air-gapped) {productname-short} environments.
+Enabling and deploying NIM models requires network access to NVIDIA GPU Cloud (NGC) services, including the `nvcr.io` container registry and the `authn.nvidia.com` authentication endpoint.
+To serve models in a disconnected environment, use the single-model serving platform with a supported runtime such as vLLM and pre-downloaded models from the {productname-short} model catalog.
+====
+endif::[]
+
 [role="_additional-resources"]
 .Additional resources
 * link:https://docs.nvidia.com/nim/index.html[NVIDIA NIM]
