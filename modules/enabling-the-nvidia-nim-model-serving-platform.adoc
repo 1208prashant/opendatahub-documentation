@@ -7,6 +7,15 @@
 As an {productname-short} administrator, you can use the {productname-long} dashboard to enable the NVIDIA NIM model serving platform.
 
 ifdef::self-managed[]
+[IMPORTANT]
+====
+The NVIDIA NIM model serving platform is not supported in disconnected (air-gapped) {productname-short} environments.
+Enabling the platform requires network access to NVIDIA GPU Cloud (NGC) services, including the `nvcr.io` container registry and the `authn.nvidia.com` authentication endpoint.
+To serve models in a disconnected environment, use the single-model serving platform with a supported runtime such as vLLM and pre-downloaded models from the {productname-short} model catalog.
+====
+endif::[]
+
+ifdef::self-managed[]
 [NOTE]
 ====
 If you previously enabled the *NVIDIA NIM model serving platform* in {productname-short}, and then upgraded to a newer version, re-enter your NVIDIA personal API key to re-enable the NVIDIA NIM model serving platform.
